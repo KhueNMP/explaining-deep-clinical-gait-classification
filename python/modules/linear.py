@@ -199,7 +199,8 @@ class Linear(Module):
         if not x_shape[1::] == lower_shape[1::]:
             print('Linear._zb_lrp detects differently shaped features in inputs X and lower/upper bounds:')
             print(x_shape[1::] , lower_shape[1::], upper_shape[1::])
-            if numpy.product(x_shape[1::]) == numpy.product(lower_shape[1::]):
+            if numpy.prod(x_shape[1::]) == numpy.prod(lower_shape[1::]): # Khue adjusted numpy.product to numpy.prod
+
                 print('   Number of features match. Attempting reshape.')
                 lower = lower.reshape([1, *x_shape[1::]])
                 upper = upper.reshape([1, *x_shape[1::]])

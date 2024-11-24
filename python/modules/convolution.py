@@ -158,7 +158,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        DX = np.zeros_like(self.X,dtype=np.float)
+        DX = np.zeros_like(self.X,dtype=float)
 
 
         if not (hf == wf and self.stride == (1,1)):
@@ -180,7 +180,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        DW = np.zeros_like(self.W,dtype=np.float)
+        DW = np.zeros_like(self.W,dtype=float)
 
         if not (hf == wf and self.stride == (1,1)):
             for i in range(Hy):
@@ -213,7 +213,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):
@@ -234,7 +234,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
         R_norm = R / (self.Y + 1e-16*((self.Y >= 0)*2 - 1.))
 
         for i in range(Hout):
@@ -256,7 +256,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):
@@ -298,7 +298,7 @@ class Convolution(Module):
         assert x_shape[1::] == lower_shape[1::] == upper_shape[1::], "Different feature shape detected between bounds and inputs! Axes 1:: differ!: X: {}, lower: {}, upper: {}".format(x_shape, lower_shape, upper_shape)
 
         # now for the actual computations
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
         W = self.W[na,:,:]
         Wp = np.maximum(0,W)
         Wm = np.minimum(0,W)
@@ -327,7 +327,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):
@@ -347,7 +347,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):
@@ -367,7 +367,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
         R_norm = R / (self.Y + epsilon*((self.Y >= 0)*2 - 1.))
 
         for i in range(Hout):
@@ -391,7 +391,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):
@@ -431,7 +431,7 @@ class Convolution(Module):
         hf,wf,df,NF = self.W.shape
         hstride, wstride = self.stride
 
-        Rx = np.zeros_like(self.X,dtype=np.float)
+        Rx = np.zeros_like(self.X,dtype=float)
 
         for i in range(Hout):
             for j in range(Wout):

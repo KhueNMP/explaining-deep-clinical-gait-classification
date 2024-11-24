@@ -199,7 +199,7 @@ class Sequential(Module):
         t_start = time.time()
         untilConvergence = convergence;    learningFactor = lfactor_initial
         bestAccuracy = 0.0;                bestLayers = copy.deepcopy(self.modules)
-        bestLoss = np.Inf;                 bestIter = 0
+        bestLoss = np.inf;                 bestIter = 0
 
         N = X.shape[0]
         for d in range(iters):
